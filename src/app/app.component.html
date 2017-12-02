@@ -1,20 +1,118 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="content">
 
+    <div class="head">
+        <h1> Ashgen</h1>
+
+    </div>
+
+
+
+    <div class="form  col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <form class="well form-horizontal" action=" " method="" id="contact_form" (ngSubmit)="Send()" #loginForm="ngForm">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>Register</legend>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">First Name</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input placeholder="First Name" class="form-control" type="text" id="name" required pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="first_name" name="name" #name="ngModel">
+
+                        </div>
+                        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                            <div [hidden]="!name.hasError('required')">Name is required</div>
+                            <div [hidden]="!name.hasError('pattern')">Only alphabetsallowed</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Last Name</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input placeholder="Last Name" class="form-control" type="text" id="lastname" required pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="last_name" name="lastname" #lastname="ngModel">
+                        </div>
+                        <div [hidden]="lastname.valid || lastname.pristine" class="alert alert-danger">
+                            <div [hidden]="!lastname.hasError('required')">Name is required</div>
+                            <div [hidden]="!lastname.hasError('pattern')">Only alphabetsallowed</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label">E-Mail</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input name="email" placeholder="E-Mail Address" class="form-control" id="email" type="text" [(ngModel)]="e_mail" required #email="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                        </div>
+                        <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                            <div [hidden]="!email.hasError('required')">Email is required</div>
+                            <div [hidden]="!email.hasError('pattern')">Email format should be
+                                <small><b>joe@abc.com</b></small></div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Phone #</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input name="mobilenumber" placeholder="+91" class="form-control" type="text" required id="mobilenumber" [(ngModel)]="mobile_number" #mobilenumber="ngModel" pattern="[0-9]*" minlength="10" maxlength="10">
+                        </div>
+                        <div [hidden]="mobilenumber.valid || mobilenumber.pristine" class="alert alert-danger">
+                            <div [hidden]="!mobilenumber.hasError('minlength')">Mobile should be 10digit</div>
+                            <div [hidden]="!mobilenumber.hasError('required')">Mobile is required</div>
+                            <div [hidden]="!mobilenumber.hasError('pattern')">Mobile numberr should be only numbers</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+
+
+                <!-- Text input-->
+
+
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                        <button class="btn btn-warning" type="submit" (click)="modal.show();">Send <span class="glyphicon glyphicon-send"></span></button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+    </div>
+    <div id="footer">
+
+        <p class="text-muted">Design By Hasnen Tai </p>
+
+    </div>
+    <app-modal #modal>
+
+        <div class="app-modal-body alert alert-success">
+            Data has been stored in to the Firebase database.A Real Time Data Base
+        </div>
+        <div class="app-modal-footer">
+            <button type="button" class="btn btn-default" (click)="modal.hide()" [disabled]="!loginForm.form.valid">Close</button>
+
+        </div>
+    </app-modal>
+</div>
